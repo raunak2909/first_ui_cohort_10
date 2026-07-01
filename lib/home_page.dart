@@ -1,13 +1,190 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+
+  List<Map<String, dynamic>> whatsappData = [
+    {
+      "name" : "Rajeev",
+      "profilePicUrl" : "",
+      "lastMsg" : "Hi",
+      "unReadCount": 1,
+      "isPinned" : true,
+      "time" : "10:00 AM",
+      "isStory" : false,
+      "isGroup" : true,
+      "groupMsgFromContact" : "Sam",
+      "msgType" : "text", ///text, image, video, audio, gif
+      "readStatus" : "read" ///read(blue ticks), sent (single tick), delivered(double tick), sending(cross),
+    }
+  ];
+
+  List<Map<String, dynamic>> mData = [
+    {
+      "name" : "Raman",
+      "bgColor" : Colors.orange
+    },
+    {
+      "name" : "Raghav",
+      "bgColor" : Colors.blue
+    },
+    {
+      "name" : "Rahul",
+      "bgColor" : Colors.purple
+    },
+    {
+      "name" : "Rajveer",
+      "bgColor" : Colors.green
+    },
+    {
+      "name" : "Ramanujan",
+      "bgColor" : Colors.brown
+    },
+    {
+      "name" : "Rajendra",
+      "bgColor" : Colors.yellow
+    },
+    {
+      "name" : "Raj",
+      "bgColor" : Colors.grey
+    },
+    {
+      "name" : "Raman",
+      "bgColor" : Colors.orange
+    },
+    {
+      "name" : "Raghav",
+      "bgColor" : Colors.blue
+    },
+    {
+      "name" : "Rahul",
+      "bgColor" : Colors.purple
+    },
+    {
+      "name" : "Rajveer",
+      "bgColor" : Colors.green
+    },
+    {
+      "name" : "Ramanujan",
+      "bgColor" : Colors.brown
+    },
+    {
+      "name" : "Rajendra",
+      "bgColor" : Colors.yellow
+    },
+    {
+      "name" : "Raj",
+      "bgColor" : Colors.grey
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SizedBox(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: mData.map((element){
+            return Container(
+              margin: EdgeInsets.all(11),
+              width: double.infinity,
+              height: 150,
+              color: element["bgColor"],
+              child: Center(
+                child: Text(element["name"], style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold
+                ),),
+              ),
+            );
+          }).toList()
+
+
+          /*List.generate(mData.length, (index){
+            return Container(
+              margin: EdgeInsets.all(11),
+              width: double.infinity,
+              height: 150,
+              color: mData[index]["bgColor"],
+            );
+          })*/
+        ),
+      )
+
+      /*Center(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color(0xffffffff),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              /*center: Alignment.topRight,
+              radius: 0.5,
+                focalRadius: 0.5,*/
+                ///stops: [0.02, 0.2, 0.7, 1],
+                colors: [
+                  Color(0xffffffff),
+              Color(0xffFEE7DA),
+              Color(0xffFFE8DB),
+              Color(0xffFFF4F0),
+                  Color(0xffffffff),
+            ])
+
+            /*boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                blurRadius: 11,
+                spreadRadius: 1,
+                offset: Offset(5, -5)
+              )
+            ]*/
+          ),
+        ),
+      ),*/
+
+     /*Stack(
+          children: [
+            Center(
+              child: Container(
+                width: 300,
+                height: 300,
+                color: Color(0xfff4be07),
+              ),
+            ),
+
+            Positioned(
+              bottom: 100,
+              right: 21,
+              child: Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue
+              ),
+            ),
+
+            Align(
+              alignment: Alignment(0, 0.2),
+              child: Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.orange
+              ),
+            ),
+
+            Positioned(
+              bottom: 200,
+              left: 100,
+              child: Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.green
+              ),
+            ),
+          ],
+      )*/
+
+     /*SizedBox(
           width: 200,
           height: 70,
           child: InkWell(
@@ -24,8 +201,7 @@ class HomePage extends StatelessWidget {
               child: Center(child: Text('Hello World!!')),
             ),
           ),
-        ),
-      ),
+        ),*/
      /* body: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
