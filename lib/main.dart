@@ -1,3 +1,4 @@
+import 'package:first_ui_cohort_10/grid_page.dart';
 import 'package:first_ui_cohort_10/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomePage(),
+      home: GridViewPage(),
     );
   }
 }
